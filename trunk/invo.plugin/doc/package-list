@@ -1,0 +1,6 @@
+com.store
+com.store.dao
+com.store.editors
+com.store.editors.validator
+com.store.model
+com.store.views

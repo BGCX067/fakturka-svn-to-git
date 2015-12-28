@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="invo.application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.store.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.store.Perspective"
+            id="invo.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Message"
+            allowMultiple="true"
+            icon="icons/sample2.gif"
+            class="com.store.View"
+            id="invo.view">
+      </view>
+      <view
+            name="Mailboxes"
+            allowMultiple="true"
+            icon="icons/sample3.gif"
+            class="com.store.NavigationView"
+            id="invo.navigationView">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.store.views.CustomersView"
+            icon="icons/sample3.gif"
+            id="invo.view.customers"
+            name="Klienci"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.store.views.ProductsView"
+            icon="icons/sample3.gif"
+            id="invo.view.products"
+            name="Produkty"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.store.views.ReportView"
+            icon="icons/sample3.gif"
+            id="invo.view.report"
+            name="Faktura"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="invo.category">
+      </category>
+      <command
+            categoryId="invo.category"
+            defaultHandler="com.store.OpenViewHandler"
+            description="Opens a mailbox"
+            id="invo.open"
+            name="Open Mailbox">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Open a message dialog"
+            categoryId="invo.category"
+            id="invo.openMessage">
+      </command>
+      <command
+            categoryId="invo.category"
+            defaultHandler="com.store.AddCustomerHandler"
+            id="invo.addCustomer"
+            name="Dodaj klienta">
+      </command>
+      <command
+            categoryId="invo.category"
+            defaultHandler="com.store.AddProductHandler"
+            id="invo.addProduct"
+            name="Dodaj produkt">
+      </command>
+      <command
+            defaultHandler="com.store.ShowTestInvoiceHandler"
+            id="invo.plugin.printDummyInvoice"
+            name="Show Test invoice">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="invo.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+2">
+      </key>
+      <key
+            commandId="invo.openMessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+3">
+      </key>
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+X">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="invo.application"
+            name="Fakturka ">
+         <property
+               name="aboutText"
+               value="RCP Mail template created by PDE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/sample2.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.store.editors.CustomerEditor"
+            default="false"
+            id="invo.editor.customer"
+            name="Klient">
+      </editor>
+      <editor
+            class="com.store.editors.ProductEditor"
+            default="false"
+            id="invo.editor.product"
+            name="Product">
+      </editor>
+      <editor
+            class="com.store.editors.InvoiceEditor"
+            default="false"
+            id="invo.editor.invoice"
+            name="Faktura">
+      </editor>
+   </extension>
+   <extension
+         id="invo_app"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="invo.application"
+            name="Fakturka">
+         <property
+               name="appName"
+               value="Super fakturka">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="invo.plugin.toolbar">
+            <command
+                  commandId="org.eclipse.ui.file.save"
+                  style="push">
+            </command>
+            <separator
+                  name="invo.plugin.separator1"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="invo.plugin.printDummyInvoice"
+                  icon="icons/sample2.gif"
+                  label="Drukuj fakture"
+                  style="push"
+                  tooltip="Drukuje testową fakturę">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>

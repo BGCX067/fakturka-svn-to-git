@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Faktura_subreport" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[quantity]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[product.name]]></fieldDescription>
+	</field>
+	<field name="price" class="java.lang.Double">
+		<fieldDescription><![CDATA[product.price]]></fieldDescription>
+	</field>
+	<field name="vat" class="java.lang.Float">
+		<fieldDescription><![CDATA[product.vat]]></fieldDescription>
+	</field>
+	<variable name="grossPrice" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{price}*$F{quantity}*($F{vat}+100)/100.0]]></variableExpression>
+		<initialValueExpression><![CDATA[0.0]]></initialValueExpression>
+	</variable>
+	<variable name="grossSum" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$V{grossPrice}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="26" width="555" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="49" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nazwa towaru]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cena netto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="30" width="40" height="20"/>
+				<textElement/>
+				<text><![CDATA[Ilość]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="30" width="31" height="20"/>
+				<textElement/>
+				<text><![CDATA[VAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="30" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cena brutto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="30" width="22" height="20"/>
+				<textElement/>
+				<text><![CDATA[Lp.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="49" y="4" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="4" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{price}*$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="4" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="4" width="31" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{vat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="4" width="22" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="4" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{grossPrice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="390" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{grossSum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="351" y="1" width="39" height="20"/>
+				<textElement/>
+				<text><![CDATA[Razem:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

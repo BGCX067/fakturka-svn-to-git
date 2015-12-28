@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--AgileJ Ltd. (http://www.agilej.com)-->
+<ajsv>
+    <diagram style="defaultDiagramStyle" version="1.7.6.v20111126-1531">
+        <switch switchID="howToShowDependenciesOptions" switchValue="hidden"/>
+        <class className="com.store.dao.CustomerDao" project="invo.plugin" xLocation="66" yLocation="1776"/>
+        <class className="com.store.dao.IDao" project="invo.plugin" xLocation="430" yLocation="1099"/>
+        <class className="com.store.dao.AbstractDao" project="invo.plugin" xLocation="302" yLocation="1330"/>
+        <class className="com.store.dao.ProductDao" project="invo.plugin" xLocation="464" yLocation="1946"/>
+        <class className="com.store.editors.CustomerEditorPanel" project="invo.plugin" xLocation="3447" yLocation="1192"/>
+        <class className="com.store.editors.ProductEditorInput" project="invo.plugin" xLocation="1684" yLocation="2477"/>
+        <class className="com.store.editors.AbstractEditor" project="invo.plugin" xLocation="3416" yLocation="769"/>
+        <class className="com.store.editors.ProductEditorPanel" project="invo.plugin" xLocation="2711" yLocation="2610"/>
+        <class className="com.store.editors.InvoiceEditor" project="invo.plugin" xLocation="2245" yLocation="100"/>
+        <class className="com.store.editors.CustomerEditorInput" project="invo.plugin" xLocation="3851" yLocation="2154"/>
+        <class className="com.store.editors.CustomerEditor" project="invo.plugin" xLocation="4466" yLocation="1421"/>
+        <class className="com.store.editors.ProductEditor" project="invo.plugin" xLocation="2895" yLocation="2266"/>
+        <class className="com.store.editors.InvoiceEditorInput" project="invo.plugin" xLocation="1684" yLocation="2055"/>
+        <class className="com.store.editors.validator.NonEmptyValidator" project="invo.plugin" xLocation="1791" yLocation="1804"/>
+        <class className="com.store.model.InvoiceItem" project="invo.plugin" xLocation="2281" yLocation="2547"/>
+        <class className="com.store.model.Product" project="invo.plugin" xLocation="2254" yLocation="2929"/>
+        <class className="com.store.model.Customer" project="invo.plugin" xLocation="3410" yLocation="2046"/>
+        <class className="com.store.model.Invoice" project="invo.plugin" xLocation="2275" yLocation="2046"/>
+        <class className="com.store.views.CustomersView" project="invo.plugin" xLocation="2655" yLocation="3474"/>
+        <class className="com.store.views.CustomerViewPanel" project="invo.plugin" xLocation="2654" yLocation="3115"/>
+        <class className="com.store.views.ReportView" project="invo.plugin" xLocation="1102" yLocation="2223"/>
+        <class className="com.store.views.ProductsView" project="invo.plugin" xLocation="4521" yLocation="1740"/>
+        <class className="com.store.views.ProductViewPanel" project="invo.plugin" xLocation="3849" yLocation="1782"/>
+        <class className="com.store.Main" project="invo.plugin" xLocation="1421" yLocation="3338"/>
+        <class className="com.store.PresentationModel" project="invo.plugin" xLocation="374" yLocation="2048"/>
+        <class className="com.store.ShowTestInvoiceHandler" project="invo.plugin" xLocation="3708" yLocation="2889"/>
+        <class className="com.store.View" project="invo.plugin" xLocation="4467" yLocation="2248"/>
+        <class className="com.store.Application" project="invo.plugin" xLocation="1814" yLocation="1576"/>
+        <class className="com.store.Perspective" project="invo.plugin" xLocation="1225" yLocation="2536"/>
+        <class className="com.store.ApplicationWorkbenchWindowAdvisor" project="invo.plugin" xLocation="3702" yLocation="2619"/>
+        <class className="com.store.ApplicationActionBarAdvisor" project="invo.plugin" xLocation="1097" yLocation="2780"/>
+        <class className="com.store.MessagePopupAction" project="invo.plugin" xLocation="3414" yLocation="507"/>
+        <class className="com.store.Activator" project="invo.plugin" xLocation="365" yLocation="1650"/>
+        <class className="com.store.ICommandIds" project="invo.plugin" xLocation="1842" yLocation="3278"/>
+        <class className="com.store.AddCustomerHandler" project="invo.plugin" xLocation="3338" yLocation="3113"/>
+        <class className="com.store.ApplicationWorkbenchAdvisor" project="invo.plugin" xLocation="1438" yLocation="3042"/>
+        <class className="com.store.NavigationView" project="invo.plugin" xLocation="1018" yLocation="1247"/>
+        <class className="com.store.OpenViewAction" project="invo.plugin" xLocation="4143" yLocation="887"/>
+        <class className="com.store.OpenViewHandler" project="invo.plugin" xLocation="4531" yLocation="2041"/>
+        <class className="com.store.AddProductHandler" project="invo.plugin" xLocation="1704" yLocation="1350"/>
+    </diagram>
+</ajsv>
